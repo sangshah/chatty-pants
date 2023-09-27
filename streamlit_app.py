@@ -22,4 +22,3 @@ with st.sidebar:
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
     st.markdown('📖 Learn how to build this app in this [blog](https://blog.streamlit.io/how-to-build-an-llm-powered-chatbot-with-streamlit/)!')
-Use the with statement 
