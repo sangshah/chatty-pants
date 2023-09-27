@@ -6,4 +6,4 @@ from hugchat.login import Login
 st.set_page_config(page_title="🤗💬 ChattyPants")
 
 
-st.write('Hello world!')
+st.write('🎈 ChattyPants - AI Chatbot')
