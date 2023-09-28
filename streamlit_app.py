@@ -43,7 +43,7 @@ def generate_response(prompt_input, email, passwd):
     sign.saveCookiesToDir(cookie_path_dir)
     # Create ChatBot                        
     chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
-    chatbot.switch_llm(1) # Switch to `meta-llama/Llama-2-70b-chat-hf`
+    #chatbot.switch_llm(1) # Switch to `meta-llama/Llama-2-70b-chat-hf`
     return chatbot.chat(prompt_input)
 
 # User-provided prompt
