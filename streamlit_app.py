@@ -42,7 +42,7 @@ def generate_response(prompt_input, email, passwd):
     cookie_path_dir = "./cookies_snapshot"
     sign.saveCookiesToDir(cookie_path_dir)
     # Create ChatBot                        
-    chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
+    chatbot = hugchat.ChatBot(cookies=cookies.get_dict(), stream=True)
     return chatbot.chat("Who is taylor swift")
 
 # User-provided prompt
