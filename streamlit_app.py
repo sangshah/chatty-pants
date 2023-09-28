@@ -46,7 +46,7 @@ def generate_response(prompt_input, email, passwd):
     # New a conversation (ignore error)
     id = chatbot.new_conversation()
     chatbot.change_conversation(id)
-    return chatbot.chat("Who is taylor swift", stream=True)
+    st.write(chatbot.chat("Who is taylor swift"))
 
 # User-provided prompt
 if prompt := st.chat_input(disabled=not (hf_email and hf_pass)):
@@ -62,6 +62,6 @@ if st.session_state.messages[-1]["role"] != "assistant":
             #st.write(prompt)
             response = generate_response(prompt, hf_email, hf_pass) 
             #print(response)
-            st.write(response) 
+            #st.write(response) 
     message = {"role": "assistant", "content": response}
     st.session_state.messages.append(message)
