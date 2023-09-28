@@ -37,8 +37,13 @@ def generate_response(prompt_input, email, passwd):
     # Hugging Face Login
     sign = Login(email, passwd)
     cookies = sign.login()
+
+    # Save cookies to the local directory
+    cookie_path_dir = "./cookies_snapshot"
+    sign.saveCookiesToDir(cookie_path_dir)
     # Create ChatBot                        
     chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
+    chatbot.switch_llm(1) # Switch to `meta-llama/Llama-2-70b-chat-hf`
     return chatbot.chat(prompt_input)
 
 # User-provided prompt
@@ -52,9 +57,9 @@ if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             #print(prompt)
-            st.write(prompt)
+            #st.write(prompt)
             response = generate_response(prompt, hf_email, hf_pass) 
             #print(response)
-            #st.write(response) 
+            st.write(response) 
     message = {"role": "assistant", "content": response}
     st.session_state.messages.append(message)
