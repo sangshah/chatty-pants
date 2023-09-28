@@ -44,7 +44,7 @@ def generate_response(prompt_input, email, passwd):
     # Create ChatBot                        
     chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
     #chatbot.switch_llm(1) # Switch to `meta-llama/Llama-2-70b-chat-hf`
-    return chatbot.chat(prompt_input)
+    return chatbot.chat("Who is taylor swift")
 
 # User-provided prompt
 if prompt := st.chat_input(disabled=not (hf_email and hf_pass)):
