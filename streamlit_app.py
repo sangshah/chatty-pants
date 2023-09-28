@@ -43,6 +43,9 @@ def generate_response(prompt_input, email, passwd):
     sign.saveCookiesToDir(cookie_path_dir)
     # Create ChatBot                        
     chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
+    # New a conversation (ignore error)
+    id = chatbot.new_conversation()
+    chatbot.change_conversation(id)
     return chatbot.chat("Who is taylor swift", stream=True)
 
 # User-provided prompt
