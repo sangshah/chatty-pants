@@ -42,8 +42,8 @@ def generate_response(prompt_input, email, passwd):
     cookie_path_dir = "./cookies_snapshot"
     sign.saveCookiesToDir(cookie_path_dir)
     # Create ChatBot                        
-    chatbot = hugchat.ChatBot(cookies=cookies.get_dict(), stream=True)
-    return chatbot.chat("Who is taylor swift")
+    chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
+    return chatbot.chat("Who is taylor swift", stream=True)
 
 # User-provided prompt
 if prompt := st.chat_input(disabled=not (hf_email and hf_pass)):
