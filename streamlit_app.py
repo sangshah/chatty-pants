@@ -44,9 +44,9 @@ def generate_response(prompt_input, email, passwd):
     # Create ChatBot                        
     chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
     # New a conversation (ignore error)
-    id = chatbot.new_conversation()
-    chatbot.change_conversation(id)
-    chatbot.switch_llm(1)
+    #id = chatbot.new_conversation()
+    #chatbot.change_conversation(id)
+    #chatbot.switch_llm(1)
     return chatbot.chat(prompt)
 
 # User-provided prompt
