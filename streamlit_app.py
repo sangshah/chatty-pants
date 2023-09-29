@@ -47,7 +47,7 @@ def generate_response(prompt_input, email, passwd):
     id = chatbot.new_conversation()
     chatbot.change_conversation(id)
     chatbot.switch_llm(1)
-    st.write(chatbot.chat("Who is taylor swift"))
+    return chatbot.chat(prompt)
 
 # User-provided prompt
 if prompt := st.chat_input(disabled=not (hf_email and hf_pass)):
